@@ -15,25 +15,29 @@
 
 ## Installation
 
-Download the latest binary for your architecture from the [Releases](https://github.com/YOUR_USERNAME/camtui/releases) page.
+Download the latest binary for your architecture from the [Releases](https://github.com/oguzeray/camtui/releases) page.
 
 ### macOS / Linux
+
 1. Download the binary: `camtui-darwin-arm64` or `camtui-linux-amd64`.
 2. Make it executable: `chmod +x camtui`.
 3. Move to your path: `sudo mv camtui /usr/local/bin/`.
 
 ### Windows
+
 1. Download `camtui-windows-amd64.exe`.
 2. Run it directly from PowerShell or Command Prompt.
 
 ## Usage
 
 Run the application:
+
 ```bash
 camtui
 ```
 
 ### Shortcuts
+
 - `a`: Add a new file or folder to the manager.
 - `e`: Encrypt the selected item.
 - `d`: Decrypt the selected item.

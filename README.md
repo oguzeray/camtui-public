@@ -10,18 +10,31 @@
 - **Master Key Architecture:** Change your PIN without re-encrypting your entire library.
 - **Native Integration:** Open native OS file pickers (`Ctrl+F` / `Ctrl+D`) directly from the terminal.
 - **Tamper Detection:** Automatically detects if your configuration or metadata has been modified.
+- **OTA Updates:** Built-in one-command updates via GitHub Releases.
 - **Multi-Instance Support:** Safe to run in multiple terminal tabs simultaneously.
 - **Zero Dependencies:** Compiled to a single static binary for easy distribution.
 
 ## Installation
 
-Download the latest binary for your architecture from the [Releases](https://github.com/oguzeray/camtui/releases) page.
+Download the latest binary for your architecture from the [Releases](https://github.com/YOUR_USERNAME/camtui/releases) page.
 
-### macOS / Linux
+### macOS
 
-1. Download the binary: `camtui-darwin-arm64` or `camtui-linux-amd64`.
-2. Make it executable: `chmod +x camtui`.
-3. Move to your path: `sudo mv camtui /usr/local/bin/`.
+1. Download the binary: `camtui-darwin-arm64` (for Silicon) or `camtui-darwin-amd64` (for Intel).
+2. Open your terminal and run:
+
+   ```bash
+   chmod +x camtui-darwin-arm64
+   # Remove the Apple Quarantine attribute (Fixes "Apple cannot check for malicious software")
+   xattr -d com.apple.quarantine camtui-darwin-arm64
+   sudo mv camtui-darwin-arm64 /usr/local/bin/camtui
+   ```
+
+### Linux
+
+1. Download the binary: `camtui-linux-amd64`.
+2. Make it executable: `chmod +x camtui-linux-amd64`.
+3. Move to your path: `sudo mv camtui-linux-amd64 /usr/local/bin/camtui`.
 
 ### Windows
 
@@ -42,6 +55,7 @@ camtui
 - `e`: Encrypt the selected item.
 - `d`: Decrypt the selected item.
 - `r`: Remove an item from the list (does not delete the file).
+- `u`: Check for and apply updates.
 - `,`: Open settings (Security presets, PIN change).
 - `q`: Quit (securely zeros the key in memory).
 
@@ -57,4 +71,4 @@ camtui
 This project is distributed as **Closed Source** software under the **MIT License**. You are free to use, distribute, and include the binaries in other projects, provided the copyright notice is preserved. Source code is not provided with this distribution.
 
 ---
-Created with ❤️ by  [Oguz Eray](https://oguzeray.com)
+Created with ❤️ by [Oguz Eray](https://oguzeray.com)

@@ -60,18 +60,15 @@ Our metadata engine is designed with **Strict Backward Compatibility**. Archives
 
 ## 📥 Deployment
 
-`camtui` is delivered as a single, hardened static binary.
+`camtui` is delivered as a single, hardened static binary. You can install it instantly on macOS or Linux using our universal installer.
 
-# Quick Install for macOS/Linux
+### One-Command Install
 
 ```bash
-curl -L https://github.com/oguzeray/camtui-public/releases/latest/download/camtui-target -o camtui
-chmod +x camtui
-mkdir -p ~/.local/bin
-mv camtui ~/.local/bin/
+curl -sSL https://raw.githubusercontent.com/oguzeray/camtui-public/main/install.sh | bash
 ```
 
-# Ensure ~/.local/bin is in your PATH
+> **Manual Install:** If you prefer to download the binary manually, or if you are on Windows, visit the [Releases](https://github.com/oguzeray/camtui-public/releases) page.
 
 ---
 

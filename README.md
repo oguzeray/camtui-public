@@ -65,7 +65,7 @@ Our metadata engine is designed with **Strict Backward Compatibility**. Archives
 # Quick Install for macOS/Linux
 
 ```bash
-curl -L https://github.com/YOUR_USERNAME/camtui-public/releases/latest/download/camtui-target -o camtui
+curl -L https://github.com/oguzeray/camtui-public/releases/latest/download/camtui-target -o camtui
 chmod +x camtui
 mkdir -p ~/.local/bin
 mv camtui ~/.local/bin/

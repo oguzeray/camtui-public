@@ -25,10 +25,8 @@ Download the latest binary for your architecture from the [Releases](https://git
 
    ```bash
    chmod +x camtui-darwin-arm64
-   # Remove the Apple Quarantine attribute
    xattr -d com.apple.quarantine camtui-darwin-arm64
 
-   # Recommended: Move to a user-writable folder for seamless OTA updates
    mkdir -p ~/.local/bin
    mv camtui-darwin-arm64 ~/.local/bin/camtui
    # Ensure ~/.local/bin is in your PATH

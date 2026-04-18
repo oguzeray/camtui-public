@@ -1,6 +1,7 @@
 # 🛡️ camtui
 
 ### **The Fortified Terminal Archive Manager.**
+
 *Secure. Tamper-Proof. Brute-Force Resistant.*
 
 `camtui` is a professional-grade Terminal User Interface (TUI) engineered for high-stakes data privacy. It combines a streamlined workflow with a "Zero-Trust" security model, ensuring your archives remain impenetrable even if your hardware is compromised.
@@ -27,28 +28,33 @@
 ## 🔒 The Security Protocol
 
 ### **1. Six-Digit Unified PIN**
+
 Every operation—from vault entry to file decryption—is guarded by a mandatory **6-digit security PIN**. This protocol ensures a uniform security surface across all encryption and decryption methods, eliminating weak points in the user-access layer.
 
 ### **2. Brute-Force Proof (Argon2id)**
+
 `camtui` utilizes **Argon2id**, the gold standard in memory-hard key derivation. By enforcing high memory and CPU costs during PIN validation, it effectively neutralizes hardware-accelerated brute-force attacks (ASICs/GPUs).
-*   **Standard:** Fast, daily protection.
-*   **Paranoid:** Maximum resource cost to defeat state-level extraction attempts.
+
+* **Standard:** Fast, daily protection.
+* **Paranoid:** Maximum resource cost to defeat state-level extraction attempts.
 
 ### **3. Tamper-Evident Architecture**
+
 The application employs an **Authenticated Encryption (AES-256-GCM)** model. Any attempt to modify your encrypted data or the underlying configuration files results in an immediate integrity failure. If a single bit is changed, `camtui` refuses to decrypt, protecting you from sophisticated "bit-flipping" attacks.
 
 ### **4. Backward Compatible & Future Proof**
+
 Our metadata engine is designed with **Strict Backward Compatibility**. Archives encrypted today will remain accessible in future versions, ensuring your long-term data cold-storage strategy is never interrupted by software updates.
 
 ---
 
 ## 🚀 Key Features
 
-- **🔐 Master Key Architecture:** Decoupled PIN management allows you to change your 6-digit access code without re-encrypting your entire library.
-- **🖥️ Native OS Integration:** Zero-latency access to system-native file pickers (`Ctrl+F` / `Ctrl+D`) while maintaining the TUI's security context.
-- **🔄 OTA Updates:** Secure, one-command binary updates (`u`) verified via GitHub Release signatures.
-- **⚡ Zero Dependency Static Binary:** Compiled in Go for maximum portability with no external runtime requirements.
-- **🧼 Memory Sanitization:** All cryptographic keys are zeroed out of RAM the microsecond the application closes.
+* **🔐 Master Key Architecture:** Decoupled PIN management allows you to change your 6-digit access code without re-encrypting your entire library.
+* **🖥️ Native OS Integration:** Zero-latency access to system-native file pickers (`Ctrl+F` / `Ctrl+D`) while maintaining the TUI's security context.
+* **🔄 OTA Updates:** Secure, one-command binary updates (`u`) verified via GitHub Release signatures.
+* **⚡ Zero Dependency Static Binary:** Compiled in Go for maximum portability with no external runtime requirements.
+* **🧼 Memory Sanitization:** All cryptographic keys are zeroed out of RAM the microsecond the application closes.
 
 ---
 
@@ -56,12 +62,16 @@ Our metadata engine is designed with **Strict Backward Compatibility**. Archives
 
 `camtui` is delivered as a single, hardened static binary.
 
-```bash
 # Quick Install for macOS/Linux
+
+```bash
 curl -L https://github.com/YOUR_USERNAME/camtui-public/releases/latest/download/camtui-target -o camtui
 chmod +x camtui
-sudo mv camtui /usr/local/bin/
+mkdir -p ~/.local/bin
+mv camtui ~/.local/bin/
 ```
+
+# Ensure ~/.local/bin is in your PATH
 
 ---
 

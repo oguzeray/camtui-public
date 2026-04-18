@@ -25,16 +25,25 @@ Download the latest binary for your architecture from the [Releases](https://git
 
    ```bash
    chmod +x camtui-darwin-arm64
-   # Remove the Apple Quarantine attribute (Fixes "Apple cannot check for malicious software")
+   # Remove the Apple Quarantine attribute
    xattr -d com.apple.quarantine camtui-darwin-arm64
-   sudo mv camtui-darwin-arm64 /usr/local/bin/camtui
+
+   # Recommended: Move to a user-writable folder for seamless OTA updates
+   mkdir -p ~/.local/bin
+   mv camtui-darwin-arm64 ~/.local/bin/camtui
+   # Ensure ~/.local/bin is in your PATH
    ```
 
 ### Linux
 
 1. Download the binary: `camtui-linux-amd64`.
 2. Make it executable: `chmod +x camtui-linux-amd64`.
-3. Move to your path: `sudo mv camtui-linux-amd64 /usr/local/bin/camtui`.
+3. Move to your path:
+
+   ```bash
+   mkdir -p ~/.local/bin
+   mv camtui-linux-amd64 ~/.local/bin/camtui
+   ```
 
 ### Windows
 
@@ -69,6 +78,3 @@ camtui
 ## License
 
 This project is distributed as **Closed Source** software under the **MIT License**. You are free to use, distribute, and include the binaries in other projects, provided the copyright notice is preserved. Source code is not provided with this distribution.
-
----
-Created with ❤️ by [Oguz Eray](https://oguzeray.com)

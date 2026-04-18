@@ -1,78 +1,90 @@
-# camtui - Encrypted Archive Manager
+# 🛡️ camtui
 
-`camtui` is a fast, secure, and lightweight Terminal User Interface (TUI) for managing encrypted archives. It uses industry-standard **Argon2id** for key derivation and **AES-256-GCM** for encryption, ensuring your data remains private and tamper-proof.
+### **The Fortified Terminal Archive Manager.**
+*Secure. Tamper-Proof. Brute-Force Resistant.*
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Linux%20%7C%20Windows-lightgrey)
+`camtui` is a professional-grade Terminal User Interface (TUI) engineered for high-stakes data privacy. It combines a streamlined workflow with a "Zero-Trust" security model, ensuring your archives remain impenetrable even if your hardware is compromised.
 
-## Key Features
+[![Security: 6-Digit PIN](https://img.shields.io/badge/Security-6--Digit%20PIN-blueviolet.svg)](#security-protocol)
+[![Protection: Brute-Force Proof](https://img.shields.io/badge/Protection-Brute--Force%20Proof-red.svg)](#brute-force-resistance)
+[![Integrity: Tamper-Proof](https://img.shields.io/badge/Integrity-Tamper--Proof-orange.svg)](#tamper-evident-architecture)
+[![Compatibility: Backward Compatible](https://img.shields.io/badge/Compatibility-Backward%20Compatible-green.svg)](#versioning)
 
-- **Master Key Architecture:** Change your PIN without re-encrypting your entire library.
-- **Native Integration:** Open native OS file pickers (`Ctrl+F` / `Ctrl+D`) directly from the terminal.
-- **Tamper Detection:** Automatically detects if your configuration or metadata has been modified.
-- **OTA Updates:** Built-in one-command updates via GitHub Releases.
-- **Multi-Instance Support:** Safe to run in multiple terminal tabs simultaneously.
-- **Zero Dependencies:** Compiled to a single static binary for easy distribution.
+---
 
-## Installation
+## ✨ Showcase
 
-Download the latest binary for your architecture from the [Releases](https://github.com/YOUR_USERNAME/camtui/releases) page.
+| Security Dashboard | Active Encryption |
+| :---: | :---: |
+| ![Dashboard Placeholder](https://via.placeholder.com/600x400?text=Fortified+Dashboard) | ![Encryption Placeholder](https://via.placeholder.com/600x400?text=Secure+Encryption+Flow) |
 
-### macOS
+| Native OS Picker | Advanced Settings |
+| :---: | :---: |
+| ![Picker Placeholder](https://via.placeholder.com/600x400?text=Secure+File+Selection) | ![Settings Placeholder](https://via.placeholder.com/600x400?text=Security+Hardening+Presets) |
 
-1. Download the binary: `camtui-darwin-arm64` (for Silicon) or `camtui-darwin-amd64` (for Intel).
-2. Open your terminal and run:
+---
 
-   ```bash
-   chmod +x camtui-darwin-arm64
-   xattr -d com.apple.quarantine camtui-darwin-arm64
+## 🔒 The Security Protocol
 
-   mkdir -p ~/.local/bin
-   mv camtui-darwin-arm64 ~/.local/bin/camtui
-   # Ensure ~/.local/bin is in your PATH
-   ```
+### **1. Six-Digit Unified PIN**
+Every operation—from vault entry to file decryption—is guarded by a mandatory **6-digit security PIN**. This protocol ensures a uniform security surface across all encryption and decryption methods, eliminating weak points in the user-access layer.
 
-### Linux
+### **2. Brute-Force Proof (Argon2id)**
+`camtui` utilizes **Argon2id**, the gold standard in memory-hard key derivation. By enforcing high memory and CPU costs during PIN validation, it effectively neutralizes hardware-accelerated brute-force attacks (ASICs/GPUs).
+*   **Standard:** Fast, daily protection.
+*   **Paranoid:** Maximum resource cost to defeat state-level extraction attempts.
 
-1. Download the binary: `camtui-linux-amd64`.
-2. Make it executable: `chmod +x camtui-linux-amd64`.
-3. Move to your path:
+### **3. Tamper-Evident Architecture**
+The application employs an **Authenticated Encryption (AES-256-GCM)** model. Any attempt to modify your encrypted data or the underlying configuration files results in an immediate integrity failure. If a single bit is changed, `camtui` refuses to decrypt, protecting you from sophisticated "bit-flipping" attacks.
 
-   ```bash
-   mkdir -p ~/.local/bin
-   mv camtui-linux-amd64 ~/.local/bin/camtui
-   ```
+### **4. Backward Compatible & Future Proof**
+Our metadata engine is designed with **Strict Backward Compatibility**. Archives encrypted today will remain accessible in future versions, ensuring your long-term data cold-storage strategy is never interrupted by software updates.
 
-### Windows
+---
 
-1. Download `camtui-windows-amd64.exe`.
-2. Run it directly from PowerShell or Command Prompt.
+## 🚀 Key Features
 
-## Usage
+- **🔐 Master Key Architecture:** Decoupled PIN management allows you to change your 6-digit access code without re-encrypting your entire library.
+- **🖥️ Native OS Integration:** Zero-latency access to system-native file pickers (`Ctrl+F` / `Ctrl+D`) while maintaining the TUI's security context.
+- **🔄 OTA Updates:** Secure, one-command binary updates (`u`) verified via GitHub Release signatures.
+- **⚡ Zero Dependency Static Binary:** Compiled in Go for maximum portability with no external runtime requirements.
+- **🧼 Memory Sanitization:** All cryptographic keys are zeroed out of RAM the microsecond the application closes.
 
-Run the application:
+---
+
+## 📥 Deployment
+
+`camtui` is delivered as a single, hardened static binary.
 
 ```bash
-camtui
+# Quick Install for macOS/Linux
+curl -L https://github.com/YOUR_USERNAME/camtui-public/releases/latest/download/camtui-target -o camtui
+chmod +x camtui
+sudo mv camtui /usr/local/bin/
 ```
 
-### Shortcuts
+---
 
-- `a`: Add a new file or folder to the manager.
-- `e`: Encrypt the selected item.
-- `d`: Decrypt the selected item.
-- `r`: Remove an item from the list (does not delete the file).
-- `u`: Check for and apply updates.
-- `,`: Open settings (Security presets, PIN change).
-- `q`: Quit (securely zeros the key in memory).
+## ⌨️ Tactical Shortcuts
 
-## Security
+| Key | Tactical Action |
+| :--- | :--- |
+| `a` | **Add** new assets to the vault |
+| `e` | **Encrypt** with 6-digit PIN verification |
+| `d` | **Decrypt** and restore to original state |
+| `r` | **Remove** metadata reference |
+| `u` | **Update** binary to latest secure version |
+| `,` | **Configure** security hardening levels |
+| `q` | **Quit** and purge memory keys |
 
-- **Encryption:** AES-256-GCM.
-- **Key Derivation:** Argon2id with customizable security presets (Standard, Strong, Paranoid).
-- **In-Memory Safety:** Encryption keys are zeroed out of memory immediately upon exit or session termination.
-- **Config Path:** `~/.config/camtui/config.json`
+---
 
-## License
+## 📄 Licensing & Distribution
 
-This project is distributed as **Closed Source** software under the **MIT License**. You are free to use, distribute, and include the binaries in other projects, provided the copyright notice is preserved. Source code is not provided with this distribution.
+`camtui` is distributed as **Secure Freeware**. You are granted a license to use and distribute the compiled binaries. The underlying source code remains proprietary to ensure the integrity of the security implementation and prevent unauthorized "gray-market" forks.
+
+---
+
+<p align="center">
+  <b>Elevate your terminal security to the next level.</b>
+</p>

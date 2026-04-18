@@ -17,11 +17,11 @@
 
 | Security Dashboard | Active Encryption |
 | :---: | :---: |
-| ![Dashboard Placeholder](https://via.placeholder.com/600x400?text=Fortified+Dashboard) | ![Encryption Placeholder](https://via.placeholder.com/600x400?text=Secure+Encryption+Flow) |
+| ![Security Dashboard](./assets/dashboard.png) | ![Active Encryption](./assets/process.png) |
 
-| Native OS Picker | Advanced Settings |
+| Secure PIN Entry | Advanced Settings |
 | :---: | :---: |
-| ![Picker Placeholder](https://via.placeholder.com/600x400?text=Secure+File+Selection) | ![Settings Placeholder](https://via.placeholder.com/600x400?text=Security+Hardening+Presets) |
+| ![Secure PIN Entry](./assets/pin.png) | ![Advanced Settings](./assets/settings.png) |
 
 ---
 

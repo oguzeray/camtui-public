@@ -57,4 +57,4 @@ camtui
 This project is distributed as **Closed Source** software under the **MIT License**. You are free to use, distribute, and include the binaries in other projects, provided the copyright notice is preserved. Source code is not provided with this distribution.
 
 ---
-Created with ❤️ by [Your Name/Organization]
+Created with ❤️ by  [Oguz Eray](https://oguzeray.com)

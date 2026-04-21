@@ -38,7 +38,7 @@ Standard deletion (`rm`) only removes file pointers, leaving data recoverable. `
 1.  **Pass 1:** Cryptographically strong random data.
 2.  **Pass 2:** All zeros (null byte overwrite).
 3.  **Pass 3:** Final random noise.
-Followed by a **Filesystem TRIM/Discard** operation, this ensures that data is physically purged from SSDs and modern NVMe controllers, leaving zero forensic trace.
+Followed by a **Filesystem TRIM/Discard** operation, this ensures that data is physically purged from SSDs and modern NVMe controllers, leaving zero forensic trace. **This shredding process is fully automatic: it triggers instantly to destroy the original plaintext after encryption, and wipes the encrypted payload after decryption. You can also trigger it manually on demand.**
 
 ### **4. 🧱 Tamper-Evident Architecture**
 Using **Authenticated Encryption (AES-256-GCM)**, `camtui` treats your data as a sealed vault. Any attempt to modify even a single bit of your encrypted archives or configuration will trigger an immediate integrity failure, protecting you against "bit-flipping" and metadata manipulation.
@@ -48,7 +48,7 @@ Using **Authenticated Encryption (AES-256-GCM)**, `camtui` treats your data as a
 ## 🚀 All-In-One Features
 
 *   **🔐 Master Key Decoupling:** Change your 6-digit access code instantly without having to re-encrypt your entire archive library.
-*   **🧹 Secure Destruction:** Integrated shredder for both encrypted vaults and plaintext files/folders.
+*   **🧹 Secure Destruction:** Integrated shredder automatically purges original files post-encryption, with manual shredding available for both encrypted vaults and plaintext files/folders.
 *   **🖥️ Native OS Integration:** Direct access to system-native file pickers (`Ctrl+F` / `Ctrl+D`) within the secure TUI context.
 *   **🔄 Verified OTA Updates:** Secure, one-command binary updates (`u`) verified via GitHub Release signatures.
 *   **⚡ Zero-Dependency Static Binary:** Written in Go for maximum portability across macOS, Linux, and Windows.
@@ -77,9 +77,10 @@ powershell -c "irm https://raw.githubusercontent.com/oguzeray/camtui-public/main
 | Key | Tactical Action |
 | :--- | :--- |
 | `a` | **Add** new assets to the managed list |
-| `e` | **Encrypt** with 6-digit PIN verification |
-| `d` | **Decrypt** and restore to original state |
-| `r` | **Shred** irreversibly (3-pass overwrite + TRIM) |
+| `e` | **Encrypt** with 6-digit PIN (auto-shreds original) |
+| `d` | **Decrypt** and restore (auto-shreds archive) |
+| `r` | **Remove** from list (non-destructive) |
+| `x` | **Shred** manually (3-pass overwrite + TRIM) |
 | `u` | **Update** binary to latest secure version |
 | `,` | **Configure** Argon2id hardening levels |
 | `q` | **Quit** and purge memory keys |
